@@ -1,0 +1,15 @@
+--VHDL for 2to4 Decoder
+--Ben Marmoll
+
+Entity 2to4decode IS
+ Port(s : IN std_logic_vector(1 downto 0);
+      y : OUT std_logic_vector(3 downto 0));
+End 2to4decode;
+
+Architecture behave decode2to4 IS
+ Begin
+    y <= "0001" when "00",
+         "0010" when "01",
+         "0100" when "10",
+         "1000" when OTHERS;
+End behave;
